@@ -1,5 +1,7 @@
 package de.neuefische;
 
+import java.util.Objects;
+
 public class Book {
     private String title;
     private String author;
@@ -15,6 +17,9 @@ public class Book {
     public  Book() {
 
     }
+
+
+
 
     //Getter und Setter
     public String getTitle() {
@@ -41,7 +46,18 @@ public class Book {
         this.isbn = isbn;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return Objects.equals(title, book.title) && Objects.equals(author, book.author) && Objects.equals(isbn, book.isbn);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, author, isbn);
+    }
 
     //Objekte toString
     @Override
@@ -52,5 +68,7 @@ public class Book {
                 ", isbn='" + isbn + '\'' +
                 '}';
     }
+
+
 
 }
