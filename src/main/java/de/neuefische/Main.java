@@ -16,6 +16,12 @@ public class Main {
 
         System.out.println(library);
 
+        book2.setAuthor("Steven King");
+        book3.setAuthor("Steven King");
+
+        System.out.println(book2.getAuthor());
+        System.out.println(book3.getAuthor());
+
 
     }
 
